@@ -1,0 +1,16 @@
+<input type="button" value="Developer Mode" onclick="dev( );" class="developer">
+<div style="display: none;" id=developer_nav>
+<a href="/"><img src="/l.png" width=200 border=0></a>
+<input type="button" value="Prebid Server" onclick="window.location='/';" class="developer_nav">
+<input type="button" value="Prebid.js" onclick="window.location='/prebid-js';" class="developer_nav">
+<input type="button" value="Prebid Video" onclick="window.location='/prebid-js-video';" class="developer_nav">
+<input type="button" value="Wrapper" onclick="window.location='/wrapper/';" class="developer_nav">
+<small><!--#echo var="DATE_LOCAL" --></small>
+</div>
+<h3><!--#echo var="PAGE_H3" --></h3>
+
+<!--#if expr='v("HIDE_ENTER") = "true"' -->
+<!--#else -->
+<br>
+<a href="/ENTER.html"><img src="/BT_STREAM_20190120_142313.gif" border="1"></a>
+<!--#endif -->

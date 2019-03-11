@@ -1,0 +1,110 @@
+<!--#include virtual="/header-global.html" -->
+
+<!-- OneTrust Cookies Consent Notice start -->
+<script src="https://cdn.cookielaw.org/consent/04838ef9-c951-4932-92ea-0c259d42ce0e.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+
+
+<!-- GPT / start -->
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21793097377/bt', [[728, 90], [970, 50], [970, 250]], 'div-gpt-ad-1548036596348-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!-- GPT / end -->
+
+<!-- prebid start -->
+<script async src="/prebid2.0.0.js"></script>
+<script>
+var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+
+
+pbjs.que.push(function() {
+
+    pbjs.setConfig({
+        s2sConfig: {
+            accountId: '1',
+            enabled: true,
+            bidders: ['ix' ],
+            timeout: 5000,
+            adapter: 'prebidServer',
+            endpoint: 'http://s2s.blocktown.net/openrtb2/auction',
+            syncEndpoint: 'http://s2s.blocktown.net/cookie_sync'
+        }
+    });
+
+
+                pbjs.setConfig({
+                    debug: true,
+                    cache: {
+                        url: false
+                    },
+                });
+
+var adUnits = [{
+    code: '/21793097377/bt',
+    mediaTypes: {
+        banner: {
+            sizes: [
+                [728, 90]
+            ]
+        }
+    },
+    bids: [{
+        bidder: 'ix',
+        params: {
+            siteId: '335943',
+            size: [728, 90]
+        }
+    }
+]
+}];
+pbjs.addAdUnits(adUnits);
+pbjs.requestBids({
+                		timeout: 5000,
+                    bidsBackHandler: function(bidResponses) {
+sendAdserverRequest();                    
+}
+                });
+
+});
+
+        function sendAdserverRequest() {
+          if (pbjs.adserverRequestSent) return;
+          pbjs.adserverRequestSent = true;
+          googletag.cmd.push(function() {
+            pbjs.que.push(function() {
+                pbjs.setTargetingForGPTAsync();
+		googletag.display('div-gpt-ad-1548036596348-0');
+            });
+          });
+        }
+</script>
+
+<!-- prebid end -->
+  </head>
+  <body>
+
+
+<!-- /621793097377/bt -->
+<div id='div-gpt-ad-1548036596348-0'>
+<script>
+//googletag.cmd.push(function() { googletag.display('div-gpt-ad-1548036596348-0'); });
+</script>
+</div>
+
+<!--#set var="PAGE_H3" value="Prebid Server" -->
+<!--#include virtual="/nav-developer.html" -->
+
+<!--#include virtual="/footer.html" -->

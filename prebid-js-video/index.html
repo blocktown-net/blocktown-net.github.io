@@ -1,0 +1,452 @@
+<!--#include virtual="/header-global.html" -->
+
+<!-- prebid // start -->
+<script async='async' src='http://localhost:9999/build/dev/prebid.js'></script>
+<script>
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+
+
+/* Prebid video ad unit */
+
+var videoAdUnit = {
+code: 'video1',
+mediaTypes: {
+    video: {
+	playerSize: [640, 480],
+	context: 'instream'
+    }
+},
+bids: [{
+    bidder: 'ix',
+    params: {
+	siteId: 335943,
+	video: {
+	    skippable: true,
+	    playback_method: ['auto_play_sound_off']
+	}
+    }
+}]
+};
+
+pbjs.que.push(function() {
+pbjs.addAdUnits(videoAdUnit);
+
+pbjs.setConfig({
+    debug: true,
+});
+
+pbjs.requestBids({
+    bidsBackHandler: function(bids) {
+	var videoUrl = pbjs.adServers.dfp.buildVideoUrl({
+	    adUnit: videoAdUnit,
+	    params: {
+		iu: '/19968336/prebid_cache_video_adunit',
+		cust_params: {
+		    section: 'blog',
+		    anotherKey: 'anotherValue'
+		},
+		output: 'vast'
+	    }
+	});
+	console.log( "---------------------------" );
+	console.log( "OMG WTF!!!!!!!!! "+videoUrl );
+	console.log( "---------------------------" );
+	invokeVideoPlayer(videoUrl);
+    }
+});
+});
+</script>
+<!-- prebid // end -->
+
+<!-- GPT / start -->
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+/*
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/62650033/bt', [[728, 90], [970, 50], [970, 250]], 'div-gpt-ad-1548036596348-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+*/
+</script>
+<!-- GPT / end -->
+
+
+<canvas id='c' style="position: absolute;z-index: -10000;"></canvas>
+
+
+    <meta name="google-site-verification" content="bLvXAgf_r6bJw-lRmKIBxHbcIgHQm316knFDloHMShI" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BLOCKTOWN.net</title>
+    <style type="text/css" media="screen">
+
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+h3{font-family: Courier, Courier New;color: #9999ff;}
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #000;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+
+<!-- /62650033/bt -->
+<div id='div-gpt-ad-1548036596348-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1548036596348-0'); });
+</script>
+</div>
+
+<!--#set var="PAGE_H3" value="Prebid.js 2 Video (pre-alpha requires gulp serve)" -->
+<!--#set var="HIDE_ENTER" value="true" -->
+<!--#include virtual="/nav-developer.html" -->
+
+<!--
+MVT
+https://pubads.g.doubleclick.net/gampad/live/ads?iu=/62650033/bt-video&description_url=[placeholder]&env=vp&impl=s&correlator=&tfcd=0&npa=0&gdfp_req=1&output=vast&sz=640x360&ciu_szs=300x250&min_ad_duration=6000&max_ad_duration=30000&unviewed_position_start=1
+
+CYGNUS 8.8 UNK2
+Send request: https://github.com/gravity-wave/gravity-wave/blob/master/gravity-wave.js
+
+https://as-sec.casalemedia.com/cygnus?nf=1&v=8.8&s=335943&fn=indexapi.jsonpResponse&r=%7B%22id%22%3A%2289815132%22%2C%22site%22%3A%7B%22page%22%3A%22https%3A%2F%2Fwww.blocktown.net%22%2C%22ref%22%3A%22https%3A%2F%2Fwww.blocktown.net%22%7D%2C%22imp%22%3A%5B%7B%22id%22%3A%220%22%2C%20%22video%22%3A%7B%22mimes%22%3A%5B%22video%2Fmp4%22%2C%22video%2Fwebm%22%2C%22video%2F3gpp%22%2C%22video%2Fx-mpegURL%22%2C%22application%2Fjavascript%22%2C%22application%2Fx-shockwave-flash%22%5D%2C%20%22minduration%22%3A0%2C%20%22maxduration%22%3A%2060%2C%22protocols%22%3A%5B2%2C3%2C5%2C6%5D%2C%22w%22%3A636%2C%22h%22%3A358%2C%22linearity%22%3A1%2C%22api%22%3A%5B1%2C2%5D%2C%22playbackmethod%22%3A%5B3%5D%2C%22startdelay%22%3A0%7D%2C%22ext%22%3A%7B%22sid%22%3A%22pr_1_1_s%22%2C%22custom%22%3A%22videoPlayback%22%7D%7D%5D%7D
+
+Player Implementation (non prebid portion to start)
+http://prebid.org/dev-docs/show-video-with-a-dfp-video-tag.html
+
+DFP
+Setup test LI
+Setup PSA LI
+      
+(may have expired!)
+adTagUrl: "https://bid.g.doubleclick.net/dbm/vast?dbm_c=AKAmf-D7VhJvqRWOcfphM19FqlEGgLnqKj7CQt2hZIWrx9wsC__G0y0UXtZ6nGPdU6EUZ-d5era8&dbm_d=AKAmf-DFm_hMXB2-5i3B95naoO_o39TMFiXXPOVA2v_jer5vra7FcUGJe_hs8khhVH9a9BiWtuZiGsPp98kmJUSXESrz2jLTR0Mu0wJC7jQB-y3IpxdUqHlY4YMuL5-BY9esFpFiYcv9sXLozA5_hUDkOxqTXf4eA5liMbg6howZA-8lIeGnUO3wLut8IpDv_GbRNdZhVxx-qjdc4lefvPWFtojqoipfoia8eXy-Kjbs5xqAsn7vBz2apKSUUHAeJ13ct1_kFMR2lC-5fNiADpTheUAr-ailmILuXEKKB7ePHDemYQZpqzBNrvGHGo6CkGooL4rQVPQyIQfY23btcvaOetHIUFnysGzHxV3LwrBo6KK3_Bgln-5MsYu_S2GEVhXpPLqoJR1NC8YdEMw7vYnujth9pokhG-XbL4eFKl4_nP6fIJ6gv8X7_iJXYYVhzE3ns84BFJWdXFJ6o42KJzAuqThQuWTcJQ_Jgv5L_rm9kI03f8DNW8ZmCUypsmXdXoxa8qFYKDpjwlP-Ca-EnRwkSMg5k3aM7wGCZuEW_qbpgHCBl0kpbRwEUje1f3leG_vukJNct9JlWHo9QCpRVjPybTnhxn-9ibAnuUXrn-7ItXu7vspXB5GZuRXARWWYJ25BcbtZaLNDRhxdKZIzHG7AXPe4qUlx_4M1GpxqtKKxwSHH8DNCVhC1MxNogBLuAUqZLStaTzjt5txIFHI_Zk9T853MRlQ-OXLckdn5L-VbZipp6wf3y7nT1joNQIXl8vVpZS3Knj1BYOwVukRSFok3qPj17DIWh5e8vTH9GKQ8mgF8ne0XloDkN9jCjEBqRBU9TCai-BdArFN3v0dbO1dOYSea9LuODysjmTAG6-9Wkze8VWxgqcr1HMGBsTjmj33BX_GFiB-_hFEJRLdEYwusGOi_9OBsvEdop0_WKlJRl0OzDHQJzc_wvNUIO4_4JFa2g18TQ-8rLnt7MXLQ-QsXiQz82MdAyb642O7Z1RlTQJXdZMWGvCsxmz54r2MtDtT99xxc7U9dpCusjnvihQbyZ0uYIcKYrBiPGW296Z5LbdRisr0P3klRLZrUQCEUNFJMI0xMHTboyIy95zLgUx8H5qmXVw3Ctxx5caZRHL_beRwF35x9GppxObJg3AQHPUA_lymoJH94r2JQSWmlPRwR7_Su6zmUBjK1GTQWSJjbhjRwV5w34qzsDR6uif0E0-oKTAPTEMxqwqSO5LXNzgrFSFnfayAyXVgWIxVtJBt1JHtY4IDWvMDg7yvRKGtQixicwoG5qanVqwJb4wi3D7Zei5uQ4wJmsSLbK3e7-8r61ERrJFka3sbmBe9Y_R7RI3qfJIjqbduK1a0L9YtK7bgd4TgbycWZkW4Hz4khfkdxvHc4g9Vg4hP3PyoLjUVeBLmLe42dwK0MCD31vvZXQi_8xpJf_QOnxX_T_YYJZPxtE90KY1HEkDN1V1KVCYtN6djsf1SEMyoHKB_ADEXUI3zkfvGcL7EdhNQI5hnIP6r7JK5qbHm7IqnQg4Q94ZLEtoJaUxZaPCUIJncHzgv7Y6pgWfAHoN6teWG5B0qaLeIscpYEKTOow7SSVGpT8Vg9-N5Hfz8GyGnufES_H5QyEZzmEtjDYtfVPl4GJ7HF6PTmov3J5mIGp7-6QsIjg_s-_Tw3EFncSvKaECx1qOlslPj4KNWhFA0ZReoGsOObJgg_lDekpjOy5A2scJLyKfXTpKC3JCQeF0Mr7xDl1EjKSMQfkpqogzh1fj_3X1skUjvKi_MlZ_ZviekPQJ-huFwmkPf-WvIO1ype4vJMtmUOfUmpjFJ154wGvTMrunScmU8um9FKICD6DKQMYKyeB_opUc6QeqfTtqcPQwHmOV22j_EyK6GBogDKhOKwilMT5OhY-GUyacrcXasBkncVrgysKsaEczWjZt6vuIjef9BT_Cy8VWBzG_hAc90IxF2COPzJ-pDX73HLsqIzeOBTui8IN-61FluSD7n5k9ewnK7eqIx-_JZVUYjkGtDNxXae6uVPE6a7tqRiwPlo5i0wK8qxlfAyJI54qZyEsCNKQaKrGbeSh5HIGcJnJBU0ryLCCgFeSiR-uZ4m8_bmW-j8eR4sRntlb7Z-OU-S5SHDmwkGVU6F6YxlGIM9gTY8UHjIiVF8uqM-JI1gVKf5qZ54sngz-teRaEY54VhC1inYXYUWBU3eDfH-XZmE1Bw4njaNpuFlPIr3eBrRqptSomWQLSYVtVgLbNJdEu4VSuw7KCoNFurg6opwAHm5qFRZEvlaKWPspbPNTGiudos74XQbhxXOL_gKvps8plXEwLxXweXt53XwJRoxFeDoAlR6FTthIqnBcXZ5zj1v1vgxoE5pqiurbDgV5ijzYJXOyvmVH-g0uUJ14HnjD_0qlMrw_gRS-pA3kV7FyqF2-t7Nis-ZdF6lUJvUFC67bV9zga0qKU2b7z1bKxHehBtTexfewsczERFUOFdZatAkt-D1E9mPtDaWf9OUNI-bRDYu&cid=CAASEuRo6j5R_vEm3GcOOj2KqAASTg&pr=13:XEfWcQAAAACQo1BEicF-KeFJFl0f968BRoxtmg",
+
+-->
+
+
+<!-- video start -->
+<div align=center>
+  <link href="/videojs/demo/videojs_5/video-js.css" rel="stylesheet">
+  <video id="vid1" class="video-js" controls preload="auto" width="800" height="480"
+  poster="/videojs/loading.mp4" data-setup="{}">
+    <source src="/videojs/loading.mp4" type='video/mp4'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+  <script src="/videojs/demo/videojs_5/video.js"></script>
+  <link href="/videojs/styles/videojs.vast.vpaid.css" rel="stylesheet">
+  <script src="/videojs/scripts/videojs_5.vast.vpaid.js"></script>
+
+        <script>
+            var page_load_time;
+
+            page_load_time = new Date().getTime() - performance.timing.navigationStart;
+            console.log(page_load_time + "ms -- Player loading!");
+
+            var vid1 = videojs('vid1');
+
+            page_load_time = new Date().getTime() - performance.timing.navigationStart;
+            console.log(page_load_time + "ms -- Player loaded!");
+
+            function invokeVideoPlayer(url) {
+
+                page_load_time = new Date().getTime() - performance.timing.navigationStart;
+                console.log(page_load_time + "ms -- Prebid VAST url = " + url);
+
+                /* Access the player instance by calling `videojs()` and passing
+                   in the player's ID. Add a `ready` listener to make sure the
+                   player is ready before interacting with it. */
+
+                videojs("vid1").ready(function() {
+
+                    page_load_time = new Date().getTime() - performance.timing.navigationStart;
+                    console.log(page_load_time + "ms -- Player is ready!");
+
+                    /* PASS SETTINGS TO VAST PLUGIN
+
+                       Pass in a JSON object to the player's `vastClient` (defined
+                       by the VAST/VPAID plugin we're using). The requires an
+                       `adTagUrl`, which will be the URL returned by Prebid. You
+                       can view all the options available for the `vastClient`
+                       here:
+
+                       https://github.com/MailOnline/videojs-vast-vpaid#options */
+
+                    var player = this;
+                    var vastAd = player.vastClient({
+                        adTagUrl: url,
+                        playAdAlways: true,
+                        verbosity: 4,
+                        vpaidFlashLoaderPath: "https://github.com/MailOnline/videojs-vast-vpaid/blob/RELEASE/bin/VPAIDFlash.swf?raw=true",
+                        autoplay: true
+                    });
+
+                    page_load_time = new Date().getTime() - performance.timing.navigationStart;
+                    console.log(page_load_time + "ms -- Prebid VAST tag inserted!");
+
+                    player.muted(true);
+                    player.play();
+
+                    page_load_time = new Date().getTime() - performance.timing.navigationStart;
+                    console.log(page_load_time + "ms -- invokeVideoPlayer complete!");
+
+  player.on('ended', function() {
+//	window.location= "http://www.quakejs.com/play?connect%20blocktown.net:27960";
+});
+
+
+                });
+            }
+
+
+// start experimental cygnus request
+/*
+	var example_req = new XMLHttpRequest( );
+	example_req.timeout = 5000;
+	example_req.onreadystatechange = function( )
+	{
+		if ( example_req.readyState == 4 && example_req.status == 200 )
+		{
+			window.res = eval ( example_req.responseText.replace( "cygnus_index_parse_res", "" ) );
+//			console.log( window.res );
+			if ( typeof window.res.seatbid === 'undefined' )
+			{
+				// No demand
+				setTimeout( function() { invokeVideoPlayer( "https://bid.g.doubleclick.net/dbm/vast?dbm_c=AKAmf-D7VhJvqRWOcfphM19FqlEGgLnqKj7CQt2hZIWrx9wsC__G0y0UXtZ6nGPdU6EUZ-d5era8&dbm_d=AKAmf-DFm_hMXB2-5i3B95naoO_o39TMFiXXPOVA2v_jer5vra7FcUGJe_hs8khhVH9a9BiWtuZiGsPp98kmJUSXESrz2jLTR0Mu0wJC7jQB-y3IpxdUqHlY4YMuL5-BY9esFpFiYcv9sXLozA5_hUDkOxqTXf4eA5liMbg6howZA-8lIeGnUO3wLut8IpDv_GbRNdZhVxx-qjdc4lefvPWFtojqoipfoia8eXy-Kjbs5xqAsn7vBz2apKSUUHAeJ13ct1_kFMR2lC-5fNiADpTheUAr-ailmILuXEKKB7ePHDemYQZpqzBNrvGHGo6CkGooL4rQVPQyIQfY23btcvaOetHIUFnysGzHxV3LwrBo6KK3_Bgln-5MsYu_S2GEVhXpPLqoJR1NC8YdEMw7vYnujth9pokhG-XbL4eFKl4_nP6fIJ6gv8X7_iJXYYVhzE3ns84BFJWdXFJ6o42KJzAuqThQuWTcJQ_Jgv5L_rm9kI03f8DNW8ZmCUypsmXdXoxa8qFYKDpjwlP-Ca-EnRwkSMg5k3aM7wGCZuEW_qbpgHCBl0kpbRwEUje1f3leG_vukJNct9JlWHo9QCpRVjPybTnhxn-9ibAnuUXrn-7ItXu7vspXB5GZuRXARWWYJ25BcbtZaLNDRhxdKZIzHG7AXPe4qUlx_4M1GpxqtKKxwSHH8DNCVhC1MxNogBLuAUqZLStaTzjt5txIFHI_Zk9T853MRlQ-OXLckdn5L-VbZipp6wf3y7nT1joNQIXl8vVpZS3Knj1BYOwVukRSFok3qPj17DIWh5e8vTH9GKQ8mgF8ne0XloDkN9jCjEBqRBU9TCai-BdArFN3v0dbO1dOYSea9LuODysjmTAG6-9Wkze8VWxgqcr1HMGBsTjmj33BX_GFiB-_hFEJRLdEYwusGOi_9OBsvEdop0_WKlJRl0OzDHQJzc_wvNUIO4_4JFa2g18TQ-8rLnt7MXLQ-QsXiQz82MdAyb642O7Z1RlTQJXdZMWGvCsxmz54r2MtDtT99xxc7U9dpCusjnvihQbyZ0uYIcKYrBiPGW296Z5LbdRisr0P3klRLZrUQCEUNFJMI0xMHTboyIy95zLgUx8H5qmXVw3Ctxx5caZRHL_beRwF35x9GppxObJg3AQHPUA_lymoJH94r2JQSWmlPRwR7_Su6zmUBjK1GTQWSJjbhjRwV5w34qzsDR6uif0E0-oKTAPTEMxqwqSO5LXNzgrFSFnfayAyXVgWIxVtJBt1JHtY4IDWvMDg7yvRKGtQixicwoG5qanVqwJb4wi3D7Zei5uQ4wJmsSLbK3e7-8r61ERrJFka3sbmBe9Y_R7RI3qfJIjqbduK1a0L9YtK7bgd4TgbycWZkW4Hz4khfkdxvHc4g9Vg4hP3PyoLjUVeBLmLe42dwK0MCD31vvZXQi_8xpJf_QOnxX_T_YYJZPxtE90KY1HEkDN1V1KVCYtN6djsf1SEMyoHKB_ADEXUI3zkfvGcL7EdhNQI5hnIP6r7JK5qbHm7IqnQg4Q94ZLEtoJaUxZaPCUIJncHzgv7Y6pgWfAHoN6teWG5B0qaLeIscpYEKTOow7SSVGpT8Vg9-N5Hfz8GyGnufES_H5QyEZzmEtjDYtfVPl4GJ7HF6PTmov3J5mIGp7-6QsIjg_s-_Tw3EFncSvKaECx1qOlslPj4KNWhFA0ZReoGsOObJgg_lDekpjOy5A2scJLyKfXTpKC3JCQeF0Mr7xDl1EjKSMQfkpqogzh1fj_3X1skUjvKi_MlZ_ZviekPQJ-huFwmkPf-WvIO1ype4vJMtmUOfUmpjFJ154wGvTMrunScmU8um9FKICD6DKQMYKyeB_opUc6QeqfTtqcPQwHmOV22j_EyK6GBogDKhOKwilMT5OhY-GUyacrcXasBkncVrgysKsaEczWjZt6vuIjef9BT_Cy8VWBzG_hAc90IxF2COPzJ-pDX73HLsqIzeOBTui8IN-61FluSD7n5k9ewnK7eqIx-_JZVUYjkGtDNxXae6uVPE6a7tqRiwPlo5i0wK8qxlfAyJI54qZyEsCNKQaKrGbeSh5HIGcJnJBU0ryLCCgFeSiR-uZ4m8_bmW-j8eR4sRntlb7Z-OU-S5SHDmwkGVU6F6YxlGIM9gTY8UHjIiVF8uqM-JI1gVKf5qZ54sngz-teRaEY54VhC1inYXYUWBU3eDfH-XZmE1Bw4njaNpuFlPIr3eBrRqptSomWQLSYVtVgLbNJdEu4VSuw7KCoNFurg6opwAHm5qFRZEvlaKWPspbPNTGiudos74XQbhxXOL_gKvps8plXEwLxXweXt53XwJRoxFeDoAlR6FTthIqnBcXZ5zj1v1vgxoE5pqiurbDgV5ijzYJXOyvmVH-g0uUJ14HnjD_0qlMrw_gRS-pA3kV7FyqF2-t7Nis-ZdF6lUJvUFC67bV9zga0qKU2b7z1bKxHehBtTexfewsczERFUOFdZatAkt-D1E9mPtDaWf9OUNI-bRDYu&cid=CAASEuRo6j5R_vEm3GcOOj2KqAASTg&pr=13:XEfWcQAAAACQo1BEicF-KeFJFl0f968BRoxtmg" ); }, 500 );
+			}
+			else
+			{
+				document.getElementById("debugger").innerHTML = window.res;
+
+				// Parse unk2 render token
+				var vast_url = window.res.seatbid[0].bid[0].ext.vasturl;
+				console.log( "VAST: "+vast_url );
+
+				// Parse price
+				var cpm_price = window.res.seatbid[0].bid[0].ext.pricelevel;
+				cpm_price = cpm_price.replace( /_/gi, '' );
+				cpm_price = cpm_price/100;
+				console.log( "CPM: "+cpm_price );
+
+				setTimeout( function() { invokeVideoPlayer( window.res.seatbid[0].bid[0].ext.vasturl ); }, 500 );
+			}
+		}
+		else if ( example_req.readyState == 4 && example_req.status == 0 )
+		{
+				// Error 
+				setTimeout( function() { invokeVideoPlayer( "https://bid.g.doubleclick.net/dbm/vast?dbm_c=AKAmf-D7VhJvqRWOcfphM19FqlEGgLnqKj7CQt2hZIWrx9wsC__G0y0UXtZ6nGPdU6EUZ-d5era8&dbm_d=AKAmf-DFm_hMXB2-5i3B95naoO_o39TMFiXXPOVA2v_jer5vra7FcUGJe_hs8khhVH9a9BiWtuZiGsPp98kmJUSXESrz2jLTR0Mu0wJC7jQB-y3IpxdUqHlY4YMuL5-BY9esFpFiYcv9sXLozA5_hUDkOxqTXf4eA5liMbg6howZA-8lIeGnUO3wLut8IpDv_GbRNdZhVxx-qjdc4lefvPWFtojqoipfoia8eXy-Kjbs5xqAsn7vBz2apKSUUHAeJ13ct1_kFMR2lC-5fNiADpTheUAr-ailmILuXEKKB7ePHDemYQZpqzBNrvGHGo6CkGooL4rQVPQyIQfY23btcvaOetHIUFnysGzHxV3LwrBo6KK3_Bgln-5MsYu_S2GEVhXpPLqoJR1NC8YdEMw7vYnujth9pokhG-XbL4eFKl4_nP6fIJ6gv8X7_iJXYYVhzE3ns84BFJWdXFJ6o42KJzAuqThQuWTcJQ_Jgv5L_rm9kI03f8DNW8ZmCUypsmXdXoxa8qFYKDpjwlP-Ca-EnRwkSMg5k3aM7wGCZuEW_qbpgHCBl0kpbRwEUje1f3leG_vukJNct9JlWHo9QCpRVjPybTnhxn-9ibAnuUXrn-7ItXu7vspXB5GZuRXARWWYJ25BcbtZaLNDRhxdKZIzHG7AXPe4qUlx_4M1GpxqtKKxwSHH8DNCVhC1MxNogBLuAUqZLStaTzjt5txIFHI_Zk9T853MRlQ-OXLckdn5L-VbZipp6wf3y7nT1joNQIXl8vVpZS3Knj1BYOwVukRSFok3qPj17DIWh5e8vTH9GKQ8mgF8ne0XloDkN9jCjEBqRBU9TCai-BdArFN3v0dbO1dOYSea9LuODysjmTAG6-9Wkze8VWxgqcr1HMGBsTjmj33BX_GFiB-_hFEJRLdEYwusGOi_9OBsvEdop0_WKlJRl0OzDHQJzc_wvNUIO4_4JFa2g18TQ-8rLnt7MXLQ-QsXiQz82MdAyb642O7Z1RlTQJXdZMWGvCsxmz54r2MtDtT99xxc7U9dpCusjnvihQbyZ0uYIcKYrBiPGW296Z5LbdRisr0P3klRLZrUQCEUNFJMI0xMHTboyIy95zLgUx8H5qmXVw3Ctxx5caZRHL_beRwF35x9GppxObJg3AQHPUA_lymoJH94r2JQSWmlPRwR7_Su6zmUBjK1GTQWSJjbhjRwV5w34qzsDR6uif0E0-oKTAPTEMxqwqSO5LXNzgrFSFnfayAyXVgWIxVtJBt1JHtY4IDWvMDg7yvRKGtQixicwoG5qanVqwJb4wi3D7Zei5uQ4wJmsSLbK3e7-8r61ERrJFka3sbmBe9Y_R7RI3qfJIjqbduK1a0L9YtK7bgd4TgbycWZkW4Hz4khfkdxvHc4g9Vg4hP3PyoLjUVeBLmLe42dwK0MCD31vvZXQi_8xpJf_QOnxX_T_YYJZPxtE90KY1HEkDN1V1KVCYtN6djsf1SEMyoHKB_ADEXUI3zkfvGcL7EdhNQI5hnIP6r7JK5qbHm7IqnQg4Q94ZLEtoJaUxZaPCUIJncHzgv7Y6pgWfAHoN6teWG5B0qaLeIscpYEKTOow7SSVGpT8Vg9-N5Hfz8GyGnufES_H5QyEZzmEtjDYtfVPl4GJ7HF6PTmov3J5mIGp7-6QsIjg_s-_Tw3EFncSvKaECx1qOlslPj4KNWhFA0ZReoGsOObJgg_lDekpjOy5A2scJLyKfXTpKC3JCQeF0Mr7xDl1EjKSMQfkpqogzh1fj_3X1skUjvKi_MlZ_ZviekPQJ-huFwmkPf-WvIO1ype4vJMtmUOfUmpjFJ154wGvTMrunScmU8um9FKICD6DKQMYKyeB_opUc6QeqfTtqcPQwHmOV22j_EyK6GBogDKhOKwilMT5OhY-GUyacrcXasBkncVrgysKsaEczWjZt6vuIjef9BT_Cy8VWBzG_hAc90IxF2COPzJ-pDX73HLsqIzeOBTui8IN-61FluSD7n5k9ewnK7eqIx-_JZVUYjkGtDNxXae6uVPE6a7tqRiwPlo5i0wK8qxlfAyJI54qZyEsCNKQaKrGbeSh5HIGcJnJBU0ryLCCgFeSiR-uZ4m8_bmW-j8eR4sRntlb7Z-OU-S5SHDmwkGVU6F6YxlGIM9gTY8UHjIiVF8uqM-JI1gVKf5qZ54sngz-teRaEY54VhC1inYXYUWBU3eDfH-XZmE1Bw4njaNpuFlPIr3eBrRqptSomWQLSYVtVgLbNJdEu4VSuw7KCoNFurg6opwAHm5qFRZEvlaKWPspbPNTGiudos74XQbhxXOL_gKvps8plXEwLxXweXt53XwJRoxFeDoAlR6FTthIqnBcXZ5zj1v1vgxoE5pqiurbDgV5ijzYJXOyvmVH-g0uUJ14HnjD_0qlMrw_gRS-pA3kV7FyqF2-t7Nis-ZdF6lUJvUFC67bV9zga0qKU2b7z1bKxHehBtTexfewsczERFUOFdZatAkt-D1E9mPtDaWf9OUNI-bRDYu&cid=CAASEuRo6j5R_vEm3GcOOj2KqAASTg&pr=13:XEfWcQAAAACQo1BEicF-KeFJFl0f968BRoxtmg" ); }, 500 );
+		}
+	};
+	example_req.ontimeout = function( )
+	{
+	};
+
+
+if ( "withCredentials" in example_req )
+{
+	example_req.open( "GET", "https://as-sec.casalemedia.com/cygnus?nf=1&v=8.8&s=335943&fn=cygnus_index_parse_res&r=%7B%22id%22%3A%2289815132%22%2C%22site%22%3A%7B%22page%22%3A%22https%3A%2F%2Fwww.blocktown.net%22%2C%22ref%22%3A%22https%3A%2F%2Fwww.blocktown.net%22%7D%2C%22imp%22%3A%5B%7B%22id%22%3A%220%22%2C%20%22video%22%3A%7B%22mimes%22%3A%5B%22video%2Fmp4%22%2C%22video%2Fwebm%22%2C%22video%2F3gpp%22%2C%22video%2Fx-mpegURL%22%2C%22application%2Fjavascript%22%2C%22application%2Fx-shockwave-flash%22%5D%2C%20%22minduration%22%3A0%2C%20%22maxduration%22%3A%2060%2C%22protocols%22%3A%5B2%2C3%2C5%2C6%5D%2C%22w%22%3A636%2C%22h%22%3A358%2C%22linearity%22%3A1%2C%22api%22%3A%5B1%2C2%5D%2C%22playbackmethod%22%3A%5B3%5D%2C%22startdelay%22%3A0%7D%2C%22ext%22%3A%7B%22sid%22%3A%22pr_1_1_s%22%2C%22custom%22%3A%22videoPlayback%22%7D%7D%5D%7D", true );
+	example_req.withCredentials = true;
+	//example_req.setRequestHeader( 'Access-Control-Request-Method', 'GET' );
+	//example_req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	//example_req.setRequestHeader('Content-Type', 'text/plain');
+	example_req.send();
+}
+else
+{
+	// no cors support (includes all IE)
+}
+
+
+
+
+
+(/
+
+
+
+        </script>
+</div>
+<!-- video end -->
+
+
+<!--#include virtual="/footer.html" -->
