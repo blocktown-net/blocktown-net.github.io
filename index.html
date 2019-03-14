@@ -1,12 +1,7 @@
 <!--#include virtual="/header-global.html" -->
 
-<!-- OneTrust Cookies Consent Notice start -->
-<script src="https://cdn.cookielaw.org/consent/04838ef9-c951-4932-92ea-0c259d42ce0e.js" type="text/javascript" charset="UTF-8"></script>
-<script type="text/javascript">
-function OptanonWrapper() { }
-</script>
-<!-- OneTrust Cookies Consent Notice end -->
 
+<!--#include virtual="/quantcast.html" -->
 
 <!-- GPT / start -->
 <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
@@ -17,6 +12,7 @@ function OptanonWrapper() { }
 <script>
   googletag.cmd.push(function() {
     googletag.defineSlot('/21793097377/bt', [[728, 90], [970, 50], [970, 250]], 'div-gpt-ad-1548036596348-0').addService(googletag.pubads());
+    googletag.defineSlot('/21793097377/bt-1', [[300, 250], [300, 600]], 'div-gpt-ad-1548036596348-1').addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
@@ -44,19 +40,26 @@ pbjs.que.push(function() {
         }
     });
 
-
                 pbjs.setConfig({
                     debug: true,
                     cache: {
                         url: false
                     },
+			consentManagement: {
+				    cmpApi: 'iab',
+				    timeout: 4000,
+				    allowAuctionWithoutConsent: true // legit interest
+				  }
                 });
 
-var adUnits = [{
+var adUnits = [
+{
     code: '/21793097377/bt',
     mediaTypes: {
         banner: {
             sizes: [
+                [970, 90],
+                [970, 250],
                 [728, 90]
             ]
         }
@@ -65,11 +68,50 @@ var adUnits = [{
         bidder: 'ix',
         params: {
             siteId: '335943',
+            size: [970, 90]
+        }
+    },{
+        bidder: 'ix',
+        params: {
+            siteId: '335943',
+            size: [970, 250]
+        }
+    },{
+        bidder: 'ix',
+        params: {
+            siteId: '335943',
             size: [728, 90]
         }
     }
 ]
-}];
+}
+,
+{
+    code: '/21793097377/bt-1',
+    mediaTypes: {
+        banner: {
+            sizes: [
+                [300, 600],
+                [300, 250]
+            ]
+        }
+    },
+    bids: [{
+        bidder: 'ix',
+        params: {
+            siteId: '335943',
+            size: [300, 600]
+        }
+    },{
+        bidder: 'ix',
+        params: {
+            siteId: '335943',
+            size: [300, 250]
+        }
+    }
+]
+}
+];
 pbjs.addAdUnits(adUnits);
 pbjs.requestBids({
                 		timeout: 5000,
@@ -87,6 +129,7 @@ sendAdserverRequest();
             pbjs.que.push(function() {
                 pbjs.setTargetingForGPTAsync();
 		googletag.display('div-gpt-ad-1548036596348-0');
+		googletag.display('div-gpt-ad-1548036596348-1');
             });
           });
         }
@@ -100,11 +143,17 @@ sendAdserverRequest();
 <!-- /621793097377/bt -->
 <div id='div-gpt-ad-1548036596348-0'>
 <script>
-//googletag.cmd.push(function() { googletag.display('div-gpt-ad-1548036596348-0'); });
 </script>
 </div>
 
 <!--#set var="PAGE_H3" value="Prebid Server" -->
+
 <!--#include virtual="/nav-developer.html" -->
+
+<!-- /621793097377/bt-1 -->
+<div id='div-gpt-ad-1548036596348-1'>
+<script>
+</script>
+</div>
 
 <!--#include virtual="/footer.html" -->
