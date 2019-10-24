@@ -185,9 +185,7 @@ sendAdserverRequest();
           pbjs.adserverRequestSent = true;
           googletag.cmd.push(function() {
           pbjs.que.push(function() {
-            
-	    // NEED to specify only the banner ad codes for GPTAsync, if you set targeting for the video slot it will NOT load
-	    pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync(['/21793097377/bt']);
+            pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync();
 	    googletag.display('div-gpt-ad-1560191267500-0');
             //googletag.display('div-gpt-ad-1548036596348-1');
 	    googletag.pubads().refresh();
