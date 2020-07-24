@@ -1,0 +1,54 @@
+<!--#include virtual="/header-global.html" -->
+
+
+<!-- OneTrust Cookies Consent Notice start -->
+<script src="https://cdn.cookielaw.org/consent/04838ef9-c951-4932-92ea-0c259d42ce0e.js" type="text/javascript" charset="UTF-8"></script>
+<!--
+  <script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<link rel="stylesheet" href="/optanon_4.3.1.css">
+<script async src="/optanon_4.3.1_nojquery.js"></script>
+-->
+<!-- OneTrust Cookies Consent Notice end -->
+
+<!--#set var="PAGE_H3" value="AMP" -->
+<!--#set var="HIDE_ENTER" value="true" -->
+<!--#include virtual="/nav-developer.html" -->
+
+<!--
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+-->
+  
+<!--script async custom-element="amp-ad" src="http://blocktown.net/dist/v0/amp-ad-0.1.js"></script-->
+<script async custom-element="amp-consent" src="http://blocktown.net/dist/v0/amp-consent-0.1.js"></script>
+<script async src="http://blocktown.net/dist/v0.js"></script>
+
+</head>
+<body>
+
+<hr/>
+<amp-consent layout="nodisplay" id="consent-element">
+  <script type="application/json">
+  {
+    "consents": {
+      "my-consent": {
+        "promptUI": "OptanonWrapper"
+      }
+    }
+  }
+  </script>
+</amp-consent>
+
+<amp-ad width="728" height="90"
+type="doubleclick"
+data-slot="/21793097377/bt"
+rtc-config='{"vendors": {"indexexchange": {"SITE_ID": "335943"}}, "timeoutMillis": 1000}'>
+</amp-ad>
+
+<hr/>
+
+</body>
+</html>
